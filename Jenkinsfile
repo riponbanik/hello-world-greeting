@@ -5,7 +5,7 @@ node('master') {
   }
 
   stage('Build & Unit test'){
-   sh 'mvn clean verify -DskipITs=true';
+   sh 'mvn clean verify -DskipITs=true' -Dmaven.wagon.http.ssl.insecure=true;
    junit '**/target/surefire-reports/TEST-*.xml'
    archive 'target/*.jar'
  }
