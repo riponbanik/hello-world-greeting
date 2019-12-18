@@ -1,4 +1,8 @@
 node('master') {
+    tools { 
+      maven 'maven3.6'     
+   }
+  
   stage('Poll') {
    checkout scm 
   }
