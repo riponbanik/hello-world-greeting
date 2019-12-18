@@ -1,8 +1,4 @@
-pipeline {
-    agent any
-	tools { 
-        maven 'maven3.6'     
-    }
+node('master') {
   
   stage('Poll') {
    checkout scm 
